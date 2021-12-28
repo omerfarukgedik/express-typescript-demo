@@ -5,7 +5,6 @@ import * as cors from 'cors'
 import * as bodyParser from "body-parser";
 import { Request, Response, NextFunction } from "express";
 import { Routes } from "./routes";
-import { request } from "http";
 
 const whitelist = ["http://localhost"];
 const corsOptions = {
