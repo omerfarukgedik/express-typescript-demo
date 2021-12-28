@@ -1,16 +1,18 @@
 # endpoint
 
-/api/getFeed
+- /api/getFeed
 
 # middlewares
 
 - apikey (header)
 - feedSchema (body)
 
-# parameters
+# example request body (required)
 
-page: number,
-take: number
+- page: number
+- take: number
+- latitude: number
+- longitude: number
 
 # Awesome Project Build with TypeORM
 
