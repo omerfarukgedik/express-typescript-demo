@@ -50,9 +50,7 @@ createConnection()
         });
 
         // start express server
-        app.listen(5000, () => {
-            console.log('started')
-        });
+        app.listen(5000);
     })
     .catch((error) => { new Error(error) });
 
