@@ -1,0 +1,18 @@
+{
+  "type": "mongodb",
+  "host": "gedik.dev",
+  "port": 6276,
+  "username": "demokerzz",
+  "password": "21385f6f2f60366e3fa57a53a0bda405",
+  "database": "demokerzz",
+  "synchronize": true,
+  "logging": false,
+  "entities": ["src/entity/**/*.ts"],
+  "migrations": ["src/migration/**/*.ts"],
+  "subscribers": ["src/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
