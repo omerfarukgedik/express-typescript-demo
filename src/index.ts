@@ -3,8 +3,9 @@ import { createConnection } from "typeorm";
 import * as express from "express";
 import * as cors from 'cors'
 import * as bodyParser from "body-parser";
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { Routes } from "./routes";
+import { request } from "http";
 
 const whitelist = ["http://localhost"];
 const corsOptions = {
@@ -28,7 +29,9 @@ createConnection()
         Routes.forEach((route) => {
             (app as any)[route.method]( //app.post
                 route.route,
-                route.middleware,
+                route.middleware
+                    ? route.middleware
+                    : (req, res, next) => { next() },
                 (req: Request, res: Response, next: Function) => {
                     let result = new (route.controller as any)()[route.action](
                         req,
@@ -51,6 +54,7 @@ createConnection()
 
         // start express server
         app.listen(5000);
+
     })
     .catch((error) => { new Error(error) });
 
