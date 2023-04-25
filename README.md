@@ -7,7 +7,7 @@
 - apikey (header)
 - feedSchema (body)
 
-# example request body (required)
+# request body example (required)
 
 - page: number
 - take: number
